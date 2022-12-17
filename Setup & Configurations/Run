@@ -1,0 +1,11 @@
+#-------Run pytest-------------
+From IDE:
+Edit configuartions---  + ---python test---pytest
+From Terminal:
+Initialize path of the pytest folder
+py.test-----all test step by step
+py.test –v -----to see more information
+py.test –v –s ----to see the console log
+py.test  syntax.py –v –s ----to run specific file
+py.test -k CreditCard -v –s --- regular expression
+py.test -m smoke -v –s ---- tag

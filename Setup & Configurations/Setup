@@ -1,0 +1,5 @@
+#---------Install pytest----------
+Go to cmd:
+pip install pytest
+Go to cmd and check if pytest is successfully installed or not:
+pytest --version
