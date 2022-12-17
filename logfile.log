@@ -1,40 +1,4 @@
-2022-05-30 11:53:32,424 : INFO: test_logging: Information:  
-2022-05-30 11:53:32,425 : WARNING: test_logging: Warnings:  
-2022-05-30 11:53:32,426 : ERROR: test_logging: a major error has occured 
-2022-05-30 11:53:32,427 : CRITICAL: test_logging: Critical Issue 
-2022-05-30 11:55:58,085 : DEBUG: test_logging: debug executed 
-2022-05-30 11:55:58,086 : INFO: test_logging: Information:  
-2022-05-30 11:55:58,086 : WARNING: test_logging: Warnings:  
-2022-05-30 11:55:58,087 : ERROR: test_logging: a major error has occured 
-2022-05-30 11:55:58,087 : CRITICAL: test_logging: Critical Issue 
-2022-05-30 11:58:31,107 : DEBUG: test_logging: debug executed 
-2022-05-30 11:58:31,109 : INFO: test_logging: Information:  
-2022-05-30 11:58:31,110 : WARNING: test_logging: Warnings:  
-2022-05-30 11:58:31,111 : ERROR: test_logging: a major error has occured 
-2022-05-30 11:58:31,111 : CRITICAL: test_logging: Critical Issue 
-2022-05-30 12:00:01,141 :DEBUG :test_logging :debug executed 
-2022-05-30 12:00:01,143 :INFO :test_logging :Information:  
-2022-05-30 12:00:01,144 :WARNING :test_logging :Warnings:  
-2022-05-30 12:00:01,145 :ERROR :test_logging :a major error has occured 
-2022-05-30 12:00:01,145 :CRITICAL :test_logging :Critical Issue 
-2022-05-30 12:01:52,804 :DEBUG :test_logging :debug executed 
-2022-05-30 12:01:52,808 :INFO :test_logging :Information:  
-2022-05-30 12:01:52,808 :WARNING :test_logging :Warnings:  
-2022-05-30 12:01:52,809 :ERROR :test_logging :a major error has occured 
-2022-05-30 12:01:52,810 :CRITICAL :test_logging :Critical Issue 
-2022-05-30 12:02:27,978 :INFO :test_logging :Information:  
-2022-05-30 12:02:27,983 :WARNING :test_logging :Warnings:  
-2022-05-30 12:02:27,984 :ERROR :test_logging :a major error has occured 
-2022-05-30 12:02:27,984 :CRITICAL :test_logging :Critical Issue 
-2022-05-30 12:16:32,261 :INFO :test_logging :Information:  
-2022-05-30 12:16:32,262 :WARNING :test_logging :Warnings:  
-2022-05-30 12:16:32,264 :ERROR :test_logging :a major error has occured 
-2022-05-30 12:16:32,264 :CRITICAL :test_logging :Critical Issue 
-2022-05-30 12:30:24,230 :INFO :test_logging :Information:  
-2022-05-30 12:30:24,231 :WARNING :test_logging :Warnings:  
-2022-05-30 12:30:24,232 :ERROR :test_logging :a major error has occured 
-2022-05-30 12:30:24,232 :CRITICAL :test_logging :Critical Issue 
-2022-05-30 13:07:41,061 :INFO :test_logging :Information:  
-2022-05-30 13:07:41,063 :WARNING :test_logging :Warnings:  
-2022-05-30 13:07:41,063 :ERROR :test_logging :a major error has occured 
-2022-05-30 13:07:41,064 :CRITICAL :test_logging :Critical Issue 
+2022-11-25 16:35:35,802 :INFO :test_logging :Information:  
+2022-11-25 16:35:35,804 :WARNING :test_logging :Warnings:  
+2022-11-25 16:35:35,805 :ERROR :test_logging :a major error has occured 
+2022-11-25 16:35:35,807 :CRITICAL :test_logging :Critical Issue 

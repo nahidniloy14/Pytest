@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>Test Report</title>
+    <title>report.html</title>
     <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
   <body onLoad="init()">
     <script>/* This Source Code Form is subject to the terms of the Mozilla Public
@@ -70,9 +70,19 @@ function hideExtras(colresultElem) {
 }
 
 function showFilters() {
+    let visibleString = getQueryParameter('visible') || 'all';
+    visibleString = visibleString.toLowerCase();
+    const checkedItems = visibleString.split(',');
+
     const filterItems = document.getElementsByClassName('filter');
-    for (let i = 0; i < filterItems.length; i++)
+    for (let i = 0; i < filterItems.length; i++) {
         filterItems[i].hidden = false;
+
+        if (visibleString != 'all') {
+            filterItems[i].checked = checkedItems.includes(filterItems[i].getAttribute('data-test-result'));
+            filterTable(filterItems[i]);
+        }
+    }
 }
 
 function addCollapse() {
@@ -243,24 +253,27 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 30-May-2022 at 09:48:06 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 25-Nov-2022 at 16:01:10 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
+        <td>JAVA_HOME</td>
+        <td>C:\Program Files\Java\jdk-18.0.2</td></tr>
+      <tr>
         <td>Packages</td>
-        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "7.1.2"}</td></tr>
+        <td>{"pluggy": "1.0.0", "pytest": "7.2.0"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Windows-10-10.0.19044-SP0</td></tr>
+        <td>Windows-10-10.0.22000-SP0</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"html": "3.1.1", "metadata": "2.0.1"}</td></tr>
+        <td>{"html": "3.2.0", "metadata": "2.0.4"}</td></tr>
       <tr>
         <td>Python</td>
-        <td>3.10.4</td></tr></table>
+        <td>3.10.6</td></tr></table>
     <h2>Summary</h2>
-    <p>12 tests ran in 1.53 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">8 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">1 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">1 unexpected passes</span>
+    <p>0 tests ran in 2.64 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">3 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -271,136 +284,30 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_class.py::TestExample::test_failed2</td>
-          <td class="col-duration">0.06</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_class.TestExample object at 0x00000268D76FDDB0&gt;<br/><br/>    def test_failed2(self):<br/>        msg = &quot;Hello&quot;<br/>&gt;       assert msg == &quot;hi&quot;, &quot;string unmatched&quot;<br/><span class="error">E       AssertionError: string unmatched</span><br/><span class="error">E       assert &#x27;Hello&#x27; == &#x27;hi&#x27;</span><br/><span class="error">E         - hi</span><br/><span class="error">E         + Hello</span><br/><br/>test_class.py:7: AssertionError<br/> -----------------------------Captured stdout setup------------------------------ <br/> i will execute first
-<br/> ----------------------------Captured stdout teardown---------------------------- <br/> i will execute last
-<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_firstprogram.py::test_failed1</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_failed1():<br/>        msg=&quot;Hello&quot;<br/>&gt;       assert msg == &quot;hi&quot;,&quot;string unmatched&quot;<br/><span class="error">E       AssertionError: string unmatched</span><br/><span class="error">E       assert &#x27;Hello&#x27; == &#x27;hi&#x27;</span><br/><span class="error">E         - hi</span><br/><span class="error">E         + Hello</span><br/><br/>test_firstprogram.py:23: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test_secondprogram.py::test_failed2</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">@pytest.mark.testcase1<br/>    def test_failed2():<br/>        msg=&quot;Hello&quot;<br/>&gt;       assert msg == &quot;hi&quot;,&quot;string unmatched&quot;<br/><span class="error">E       AssertionError: string unmatched</span><br/><span class="error">E       assert &#x27;Hello&#x27; == &#x27;hi&#x27;</span><br/><span class="error">E         - hi</span><br/><span class="error">E         + Hello</span><br/><br/>test_secondprogram.py:5: AssertionError<br/></div></td></tr></tbody>
-      <tbody class="xpassed results-table-row">
-        <tr>
-          <td class="col-result">XPassed</td>
-          <td class="col-name">test_firstprogram.py::test_doNotTestMe</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hello
-<br/></div></td></tr></tbody>
-      <tbody class="skipped results-table-row">
-        <tr>
-          <td class="col-result">Skipped</td>
-          <td class="col-name">test_secondprogram.py::test_skipped</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">(&#x27;C:\\Users\\lm\\PycharmProjects\\SeleniumLearningSession\\Pytest{Udemy}\\test_secondprogram.py&#x27;, 7, &#x27;Skipped: unconditional skip&#x27;)<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_class.py::TestExample::test_skipped</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/> i will execute first
-<br/> ------------------------------Captured stdout call------------------------------ <br/>I am skipped
-<br/> ----------------------------Captured stdout teardown---------------------------- <br/> i will execute last
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_firstprogram.py::test_message</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>hello
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_firstprogram.py::test_addition</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">test_ChildClass.py::collect</td>
+          <td class="col-duration"></td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_firstprogram.py::test_crossBrowser[crossBrowser0]</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">Tagging/demo1_test.py::collect</td>
+          <td class="col-duration"></td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>chrome
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="error results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_firstprogram.py::test_crossBrowser[crossBrowser1]</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-result">Error</td>
+          <td class="col-name">Tagging/demo2_test.py::collect</td>
+          <td class="col-duration"></td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>firefox
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_firstprogram.py::test_crossBrowser[IE]</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>I
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_fixture.py::test_fixture</td>
-          <td class="col-duration">0.01</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/> i will execute first
-<br/> ------------------------------Captured stdout call------------------------------ <br/> i will execute steps in this method 
-<br/> ----------------------------Captured stdout teardown---------------------------- <br/> i will execute last
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_fixtureData.py::TestExample2::test_editProfile</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>User Profile date is created
-<br/> ------------------------------Captured stdout call------------------------------ <br/>[&#x27;Nahid Hassan &#x27;, &#x27;Niloy&#x27;, &#x27;26&#x27;]
-Niloy
-<br/></div></td></tr></tbody></table></body></html>
+            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
