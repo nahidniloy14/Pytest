@@ -1,18 +1,29 @@
-# fixture will execute before we reach our test cases ,all the reuseable stuffs should go into the fixture
 import pytest
 
 
 @pytest.fixture()
-def setup():
-    print(" i will execute first")
-    yield
-    print(" i will execute last")
+def greet():
+    print("Good Morning")
 
-def test_fixture(setup):
-    print(" i will execute steps in this method ")
 
-""""
-i will execute first
-i will execute steps in this method
-PASSED i will execute last
+def test_employee(greet):
+    print("How you doin?")
+
+
+def test_HR(greet):
+    print("How are you,Sir?")
+
+
+def test_staff(greet):
+    print("whatss up??")
+
+"""
+test_fixture2.py::test_employee Good Morning
+PASSED                                   [ 33%]How you doin?
+
+test_fixture2.py::test_HR Good Morning
+PASSED                                         [ 66%]How are you,Sir?
+
+test_fixture2.py::test_staff Good Morning
+PASSED                                      [100%]whatss up??
 """
