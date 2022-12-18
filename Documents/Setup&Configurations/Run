@@ -1,0 +1,24 @@
+#-------Run pytest-------------
+From IDE
+OR
+From Terminal:
+--- To Run all tests inside the package
+-v = verbose(verbose is an argument which is used to report more information about an opertaion)
+–s = to see the console log
+py.test -v -s 'filepath'
+py.test -v -s C:\Users\lm\PycharmProjects\Pytest\TestData
+
+
+-----Run using the file name
+py.test -v -s filename
+py.test -v -s demo_test1.py
+
+
+-----Run using the method name
+py.test -v -s filename::methodname
+py.test -v -s demo_test1.py::test_one
+
+
+py.test  syntax.py –v –s ----to run specific file
+py.test -k CreditCard -v –s --- regular expression
+py.test -m smoke -v –s ---- tag

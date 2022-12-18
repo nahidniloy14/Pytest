@@ -1,0 +1,7 @@
+#-------------Naming Convention------------
+filename should start with test
+test_firstProgram.py
+
+method name start with test
+test_firstMethod.py
+
