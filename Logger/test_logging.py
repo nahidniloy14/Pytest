@@ -3,7 +3,7 @@ import logging
 def test_logging():
     loggerName=inspect.stack()[1][3]
     logger=logging.getLogger(__name__) #method to log everything#__name__ prints name
-    fileHandler=logging.FileHandler('../logfile.log')
+    fileHandler=logging.FileHandler('../Reports/logfile.log')
     formatter=logging.Formatter("%(asctime)s :%(levelname)s :%(name)s :%(message)s ")
     #2022/12/17 12.40.16 :ERROR: <test case name>:Fatal error in submetting credit card
     #s will think it as a string
