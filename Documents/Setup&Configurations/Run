@@ -18,7 +18,10 @@ py.test -v -s demo_test1.py
 py.test -v -s filename::methodname
 py.test -v -s demo_test1.py::test_one
 
-
 py.test  syntax.py –v –s ----to run specific file
 py.test -k CreditCard -v –s --- regular expression
 py.test -m smoke -v –s ---- tag
+
+
+#----------rerun failed tests
+py.test --reruns 4 test_demo.py

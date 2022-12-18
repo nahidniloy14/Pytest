@@ -6,3 +6,6 @@ pytest --version
 
 # -----------Install pytest Order
 pip3 install pytest-ordering
+
+#------------Intsall rerunfailures
+pip install pytest-rerunfailures
